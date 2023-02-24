@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.tablacont {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tablacont th, .tablacont td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.tablacont th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+}
+
+#listaErrores {
+    color: red;
+    margin: 0;
+    padding: 0;
+  }
+
+ #formulario {
+    margin: auto;
+    border: 1px solid black;
+    padding: 20px;
+    padding-left: 10%;
+  }
+
+  #listaErrores {
+    margin: 10px 0 10px 200px;
+  }

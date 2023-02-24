@@ -42,10 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (regExpMatricula.test(matricula))
         getMatricula()
-             .then((resp)=> {
-                 matriculaEncontrada=resp;
-                return getNombre()
-        })
+                .then()
+                .then((resp)=> {matriculaEncontrada=resp;return getNombre()})              // y hay que poner aun todos los demás datos
                 .then((matriculaEncontrada)=>{})
                 .catch((errores)=>{pintarErrores()})
     
@@ -117,8 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-
-
     const setLocal = () => {
         localStorage.setItem('propietarioslocal', JSON.stringify(arrayLocalPropietarios))
         getLocal()
@@ -127,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const getLocal = () => {
 
         return JSON.parse(localStorage.getItem('propietarioslocal')) || [];
-
+        pintarTabla()
     }
 
 
@@ -145,15 +141,4 @@ document.addEventListener('DOMContentLoaded', () => {
             tablaResultados.appendChild(elementoTabla);
         });
     }
-
-
-    const init = () => {
-        getDatos(id)
-        .then((resp)=>{console.log(resp)})
-        .catch((error)=>{console.log(error)})
-
-
-    }
-
-    init()
 })
